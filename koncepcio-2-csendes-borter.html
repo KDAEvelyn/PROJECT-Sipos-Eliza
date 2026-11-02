@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Személyre szabott kozmetikai kezelések bőrfiatalításra és problémás bőrre az Eliza Beauty Salonban, Budapesten.">
+  <meta name="theme-color" content="#FCF9F8">
+  <title>Csendes bőrtér | Eliza Beauty Salon</title>
+  <link rel="icon" type="image/svg+xml" href="eliza-alapanyag/logo-palettahoz-igazitva/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          'brand-primary': 'var(--color-brand-primary)',
+          'brand-secondary': 'var(--color-brand-secondary)',
+          'brand-accent': 'var(--color-brand-accent)',
+          'brand-bg': 'var(--color-brand-bg)',
+          'brand-surface': 'var(--color-brand-surface)',
+          'brand-text': 'var(--color-brand-text)',
+          'brand-muted': 'var(--color-brand-muted)'
+        },
+        fontFamily: { heading: 'var(--font-heading)', body: 'var(--font-body)' }
+      }}
+    };
+  </script>
+  <style>
+    :root {
+      --color-brand-primary:#D59999; --color-brand-secondary:#3C0B1D;
+      --color-brand-accent:#828282; --color-brand-bg:#FCF9F8;
+      --color-brand-surface:#F7EBEB; --color-brand-text:#62636A;
+      --color-brand-muted:#828282; --font-heading:'Quicksand',Montserrat,sans-serif;
+      --font-body:'Montserrat',Arial,sans-serif; --content:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--color-brand-bg);color:var(--color-brand-text);font:16px/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
+    img{max-width:100%}
+    a{color:inherit}
+    button,input,textarea{font:inherit}
+    a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--color-brand-secondary);outline-offset:4px}
+    .container{width:min(var(--content),calc(100% - 64px));margin-inline:auto}
+    .eyebrow{margin:0 0 14px;color:var(--color-brand-primary);font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1.4;text-transform:uppercase}
+    h1,h2,h3,h4{margin:0;color:var(--color-brand-secondary);font-family:var(--font-heading)}
+    h1{font-size:clamp(38px,5vw,62px);font-weight:600;line-height:1.1;letter-spacing:-.04em}
+    h2{font-size:clamp(30px,3.7vw,46px);font-weight:600;line-height:1.16;letter-spacing:-.035em}
+    h3{font-size:clamp(19px,2vw,24px);font-weight:600;line-height:1.25}
+    p{margin:0 0 18px}
+    .section{padding:clamp(64px,8vw,108px) 0}
+    .section-heading{display:grid;grid-template-columns:1fr minmax(230px,.65fr);align-items:end;gap:48px;margin-bottom:42px}
+    .section-heading p{max-width:440px;margin:0}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 24px;border:1px solid transparent;border-radius:999px;background:var(--color-brand-primary);color:#fff;font-size:13px;font-weight:700;text-decoration:none;transition:background-color .25s ease,color .25s ease,transform .3s cubic-bezier(.2,.8,.2,1)}
+    .button:hover{background:var(--color-brand-secondary);transform:translateY(-2px)}
+    .button-secondary{border-color:var(--color-brand-primary);background:transparent;color:var(--color-brand-secondary)}
+    .button-secondary:hover{border-color:var(--color-brand-secondary);color:white}
+    .button-light{background:white;color:var(--color-brand-secondary)}
+    .button-light:hover{background:var(--color-brand-primary);color:white}
+    /* Finom, bőrtónusra emlékeztető kontúrvonalak térnek vissza több szekcióban. */
+    .contour{position:relative;isolation:isolate}
+    .contour::after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:repeating-radial-gradient(ellipse at 88% 46%,transparent 0 20px,rgba(60,11,29,.055) 21px 22px,transparent 23px 41px);opacity:.72}
+    .contour-mark::after{content:"";display:block;width:54px;height:12px;margin-top:16px;border-top:1px solid var(--color-brand-primary);border-radius:50%;transform:rotate(-4deg)}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(252,249,248,.96);border-bottom:1px solid rgba(219,219,223,.72);transition:box-shadow .3s ease,background-color .3s ease;backdrop-filter:blur(14px)}
+    .site-header.is-scrolled{box-shadow:0 8px 28px rgba(60,11,29,.07);background:rgba(252,249,248,.98)}
+    .nav{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:inline-flex;flex:0 0 auto;align-items:center;width:142px}
+    .brand img{display:block;width:100%;height:auto}
+    .nav-links{display:flex;align-items:center;gap:clamp(18px,2.4vw,34px);list-style:none;margin:0;padding:0}
+    .nav-links a{color:var(--color-brand-secondary);font-size:13px;font-weight:500;text-decoration:none;transition:color .2s ease}
+    .nav-links a:hover,.nav-links a[aria-current=page]{color:var(--color-brand-primary)}
+    .nav-cta{min-height:44px;padding-inline:20px;font-size:12px}
+    .menu-toggle{display:none;min-width:44px;min-height:44px;border:1px solid var(--color-brand-primary);border-radius:50%;background:transparent;color:var(--color-brand-secondary);cursor:pointer}
+    .nav-mobile-cta{display:none}
+    /* Széles kezelési kép, majd külön világos copy-sáv. A fotó nem kap feliratot. */
+    .hero{padding-top:22px}
+    .hero-image-wrap{width:min(1440px,calc(100% - 64px));margin:0 auto;height:clamp(300px,42vw,520px);overflow:hidden;background:var(--color-brand-surface);position:relative}
+    .hero-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center 44%;animation:imageArrive 1s cubic-bezier(.2,.7,.2,1) both}
+    .hero-image-wrap::after{content:"";position:absolute;inset:0;border:1px solid rgba(60,11,29,.08);pointer-events:none}
+    .hero-caption{width:min(1050px,calc(100% - 96px));position:relative;z-index:1;margin:-1px auto 0;padding:clamp(30px,4.4vw,58px) clamp(28px,5.2vw,76px) clamp(34px,4vw,52px);background:white;animation:captionArrive .75s .16s both}
+    .hero-caption::before{content:"";position:absolute;top:0;left:0;width:88px;height:3px;background:var(--color-brand-primary)}
+    .hero-tag{position:absolute;right:0;top:-35px;padding:9px 16px;background:var(--color-brand-secondary);color:white;font-size:11px;letter-spacing:.03em}
+    .hero-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.55fr);align-items:end;gap:42px}
+    .hero-copy{max-width:710px}
+    .hero-copy .lead{max-width:640px;margin:18px 0 0;font-size:16px;line-height:1.75}
+    .hero-note{margin:17px 0 0;color:var(--color-brand-muted);font-size:12px}
+    .hero-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+    .services{background:var(--color-brand-surface);overflow:hidden}
+    .services-grid{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.4fr);gap:clamp(36px,7vw,92px);align-items:start}
+    .services-intro{max-width:390px}
+    .services-intro p:not(.eyebrow){margin-top:18px}
+    .service-list{border-top:1px solid rgba(60,11,29,.22)}
+    .service-row{display:grid;grid-template-columns:50px minmax(180px,.72fr) minmax(180px,1fr) 28px;gap:20px;align-items:start;padding:23px 0;border-bottom:1px solid rgba(60,11,29,.22);text-decoration:none}
+    .service-marker{display:block;width:9px;height:9px;margin:7px auto 0;border:1px solid var(--color-brand-primary);border-radius:50%;box-shadow:0 0 0 5px rgba(213,153,153,.12)}
+    .service-row h3{font-size:21px}
+    .service-row p{margin:0;font-size:13px;line-height:1.65}
+    .service-arrow{color:var(--color-brand-secondary);font-size:20px;line-height:1;transition:transform .25s ease}
+    .service-row:hover .service-arrow{transform:translateX(4px)}
+    .feature-link{display:inline-flex;gap:12px;align-items:center;margin-top:12px;color:var(--color-brand-secondary);font-size:13px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--color-brand-primary);padding-bottom:5px}
+    .featured{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);align-items:center;gap:clamp(36px,7vw,92px)}
+    .featured-photo{height:440px;overflow:hidden;position:relative;background:var(--color-brand-surface)}
+    .featured-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+    .featured-photo:hover img{transform:scale(1.025)}
+    .photo-note{position:absolute;bottom:16px;left:16px;padding:8px 12px;background:rgba(252,249,248,.94);color:var(--color-brand-secondary);font-size:11px}
+    .feature-copy p{max-width:490px;margin-top:20px}
+    .benefits{background:white}
+    .benefit-layout{display:grid;grid-template-columns:minmax(240px,.78fr) minmax(0,1.22fr);gap:64px}
+    .benefit-list{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+    .benefit{padding:19px 0 21px;border-top:1px solid var(--color-brand-primary)}
+    .benefit h3{font-size:18px}
+    .benefit p{margin:9px 0 0;font-size:13px;line-height:1.65}
+    .voices{position:relative;overflow:hidden;background:var(--color-brand-secondary);color:white}
+    .voices::after{background:repeating-radial-gradient(ellipse at 12% 52%,transparent 0 24px,rgba(247,235,235,.12) 25px 26px,transparent 27px 48px);opacity:.45}
+    .voices .eyebrow{color:var(--color-brand-surface)}
+    .voices h2{color:white}
+    .voices .section-heading p{color:rgba(255,255,255,.74)}
+    .voices-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 54px;border-top:1px solid rgba(255,255,255,.26)}
+    .voice{padding:30px 0 22px;border-bottom:1px solid rgba(255,255,255,.26)}
+    .voice blockquote{margin:0;color:white;font:500 clamp(17px,2vw,22px)/1.55 var(--font-heading)}
+    .voice cite{display:block;margin-top:16px;color:var(--color-brand-surface);font:600 12px var(--font-body);font-style:normal}
+    .about{background:white}
+    .about-layout{display:grid;grid-template-columns:minmax(210px,.62fr) minmax(0,1.38fr);gap:clamp(36px,7vw,90px);align-items:start}
+    .about-signature{min-height:300px;display:grid;place-items:center;background:var(--color-brand-surface);position:relative;overflow:hidden}
+    .about-signature::before,.about-signature::after{content:"";position:absolute;width:225px;height:225px;border:1px solid rgba(60,11,29,.17);border-radius:50%}
+    .about-signature::after{width:158px;height:158px;transform:rotate(32deg);border-color:rgba(213,153,153,.75)}
+    .signature-core{position:relative;z-index:1;width:112px;height:112px;display:grid;place-items:center;border-radius:50%;background:var(--color-brand-secondary);color:white;font:600 35px var(--font-heading);letter-spacing:.04em}
+    .about-copy p{margin-top:18px}
+    .credentials{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:22px;color:var(--color-brand-secondary);font-size:12px;font-weight:600}
+    .credentials span{border-bottom:1px solid var(--color-brand-primary);padding-bottom:5px}
+    .facts{background:var(--color-brand-bg)}
+    .facts-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .facts-head p{margin:0;color:var(--color-brand-muted);font-size:11px;max-width:290px}
+    .facts-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--color-brand-primary);border-bottom:1px solid var(--color-brand-primary)}
+    .fact{padding:25px 24px 27px 0}
+    .fact+.fact{padding-left:24px;border-left:1px solid var(--color-brand-primary)}
+    .fact strong{display:block;color:var(--color-brand-secondary);font:600 clamp(28px,3.6vw,42px)/1.1 var(--font-heading)}
+    .fact span{display:block;margin-top:7px;color:var(--color-brand-text);font-size:12px}
+    .journey{background:var(--color-brand-surface)}
+    .journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(60,11,29,.32)}
+    .journey-step{padding:22px 22px 0 0}
+    .journey-step+.journey-step{padding-left:22px;border-left:1px solid rgba(60,11,29,.2)}
+    .journey-index{display:block;color:var(--color-brand-primary);font:600 24px var(--font-heading);margin-bottom:16px}
+    .journey-step h3{font-size:18px}
+    .journey-step p{margin:9px 0 0;font-size:13px}
+    .investment{background:var(--color-brand-secondary);color:white;position:relative;overflow:hidden}
+    .investment::after{background:repeating-radial-gradient(ellipse at 88% 45%,transparent 0 24px,rgba(247,235,235,.1) 25px 26px,transparent 27px 48px);opacity:.55}
+    .investment h2{color:white;max-width:700px}
+    .investment .eyebrow{color:var(--color-brand-surface)}
+    .investment-copy{max-width:640px;margin-top:18px;color:rgba(255,255,255,.78)}
+    .investment-row{display:flex;align-items:end;justify-content:space-between;gap:30px}
+    .packages{background:white}
+    .package-table{border-top:1px solid var(--color-brand-primary)}
+    .package-row{display:grid;grid-template-columns:minmax(160px,.8fr) 1.2fr auto;gap:24px;align-items:center;padding:21px 0;border-bottom:1px solid var(--color-brand-primary)}
+    .package-row h3{font-size:18px}
+    .package-row p{margin:0;font-size:13px}
+    .package-price{color:var(--color-brand-secondary);font:600 18px var(--font-heading);white-space:nowrap}
+    .package-note{margin:16px 0 0;color:var(--color-brand-muted);font-size:11px}
+    .faq{background:var(--color-brand-bg)}
+    .faq-list{border-top:1px solid var(--color-brand-primary)}
+    .faq-item{border-bottom:1px solid var(--color-brand-primary)}
+    .faq-item summary{display:flex;justify-content:space-between;gap:24px;align-items:center;padding:19px 0;color:var(--color-brand-secondary);font-weight:600;cursor:pointer;list-style:none}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:"+";color:var(--color-brand-primary);font-size:23px;font-weight:400;transition:transform .25s ease}
+    .faq-item[open] summary::after{transform:rotate(45deg)}
+    .faq-item p{max-width:760px;padding:0 38px 20px 0;margin:0;font-size:14px}
+    .guide{background:var(--color-brand-surface)}
+    .guide-layout{display:grid;grid-template-columns:1fr minmax(280px,.72fr);gap:70px;align-items:center}
+    .guide-copy{max-width:610px}
+    .guide-copy p{margin-top:18px}
+    .guide-form{padding:25px 26px 26px;background:white}
+    .field{display:grid;gap:7px;margin-bottom:14px}
+    .field label{color:var(--color-brand-secondary);font-size:12px;font-weight:600}
+    .field input,.field textarea{width:100%;border:1px solid var(--color-brand-primary);border-radius:4px;padding:12px 13px;background:white;color:var(--color-brand-secondary);font-size:14px}
+    .field input:focus,.field textarea:focus{outline:2px solid var(--color-brand-secondary);outline-offset:2px}
+    .consent{display:flex;gap:9px;align-items:flex-start;margin:12px 0 17px;font-size:11px;line-height:1.5}
+    .consent input{margin-top:2px;accent-color:var(--color-brand-secondary)}
+    .form-message{margin:13px 0 0;color:var(--color-brand-secondary);font-size:12px}
+    .contact{background:white}
+    .contact-layout{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(320px,1fr);gap:clamp(36px,8vw,105px);align-items:start}
+    .contact-meta{margin-top:30px;border-top:1px solid var(--color-brand-primary)}
+    .contact-meta p{margin:0;padding:13px 0;border-bottom:1px solid var(--color-brand-primary);font-size:13px}
+    .contact-meta strong{display:block;color:var(--color-brand-secondary);font-size:11px;margin-bottom:3px}
+    .sample-data{color:var(--color-brand-muted);font-size:10px!important;border:0!important;padding-top:8px!important}
+    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
+    .contact-form .field-message{grid-column:1/-1}
+    .contact-form button{grid-column:1/-1;justify-self:start;margin-top:4px}
+    .closing{padding:42px 0;background:var(--color-brand-primary);color:var(--color-brand-secondary)}
+    .closing-row{display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .closing h2{max-width:720px;color:var(--color-brand-secondary);font-size:clamp(28px,3.6vw,40px)}
+    .footer{padding:48px 0 25px;background:var(--color-brand-secondary);color:rgba(255,255,255,.78)}
+    .footer-main{display:grid;grid-template-columns:1.2fr .8fr .7fr;gap:50px;padding-bottom:34px}
+    .footer-logo{width:135px;filter:brightness(0) invert(1);opacity:.96}
+    .footer-about p{max-width:390px;margin-top:18px;font-size:12px;line-height:1.75}
+    .footer h3{color:white;font:600 14px var(--font-body);margin-bottom:14px}
+    .footer p,.footer a{font-size:12px;line-height:1.8}
+    .footer a{color:rgba(255,255,255,.84);text-decoration:none}
+    .footer a:hover{color:var(--color-brand-surface)}
+    .footer-links{display:grid;gap:6px;align-content:start}
+    .footer-bottom{display:flex;justify-content:space-between;gap:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:10px}
+    .footer-bottom a{font-size:10px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+    .reveal.revealed{opacity:1;transform:none}
+    .reveal-from-left{opacity:0;transform:translateX(-22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+    .reveal-from-left.revealed{opacity:1;transform:none}
+    @keyframes imageArrive{from{transform:scale(1.025);opacity:.65}to{transform:scale(1);opacity:1}}
+    @keyframes captionArrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.reveal-from-left{opacity:1;transform:none}}
+    @media(max-width:900px){
+      .container{width:min(var(--content),calc(100% - 48px))}.nav{min-height:78px}.brand{width:125px}.nav-links{gap:15px}.nav-links a{font-size:12px}.nav-cta{padding-inline:15px}
+      .hero-image-wrap{width:calc(100% - 48px);height:380px}.hero-caption{width:calc(100% - 84px)}.hero-content{grid-template-columns:1fr;gap:22px}.hero-actions{justify-content:flex-start}
+      .services-grid,.benefit-layout,.about-layout,.guide-layout{grid-template-columns:1fr;gap:36px}.featured{gap:36px}.footer-main{grid-template-columns:1fr 1fr}.footer-about{grid-column:1/-1}
+    }
+    @media(max-width:650px){
+      .container{width:calc(100% - 40px)}.nav{min-height:72px}.brand{width:110px}.menu-toggle{display:inline-grid;place-items:center}.nav-cta{display:none}
+      .nav-links{position:absolute;top:71px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 18px;background:var(--color-brand-bg);border-bottom:1px solid var(--color-brand-primary)}
+      .nav-links.is-open{display:flex}.nav-links a{display:block;padding:13px 2px;font-size:14px}.nav-mobile-cta{display:block;margin-top:9px}
+      .hero{padding-top:12px}.hero-image-wrap{width:calc(100% - 24px);height:265px}.hero-image{object-position:54% center}.hero-caption{width:calc(100% - 40px);padding:28px 22px 32px}.hero-tag{top:-31px;font-size:10px}
+      .hero-copy .lead{font-size:14px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .button{width:100%}.section{padding:64px 0}
+      .section-heading{grid-template-columns:1fr;gap:15px;margin-bottom:30px}.section-heading p{font-size:14px}
+      .service-row{grid-template-columns:32px 1fr 18px;gap:12px;padding:19px 0}.service-row p{grid-column:2;grid-row:2}.service-arrow{grid-column:3;grid-row:1}
+      .featured{grid-template-columns:1fr}.featured-photo{height:310px;order:-1}.benefit-list{grid-template-columns:1fr}.voices-grid{grid-template-columns:1fr}.about-layout{gap:25px}.about-signature{min-height:220px}
+      .facts-head{display:block}.facts-head p{margin-top:12px}.facts-row{grid-template-columns:1fr}.fact{padding:19px 0}.fact+.fact{padding-left:0;border-left:0;border-top:1px solid var(--color-brand-primary)}
+      .journey-grid{grid-template-columns:1fr 1fr;row-gap:25px}.journey-step{padding:16px 14px 0 0}.journey-step+.journey-step{padding-left:14px}.journey-step:nth-child(3){padding-left:0;border-left:0}
+      .investment-row,.closing-row{align-items:flex-start;flex-direction:column}.package-row{grid-template-columns:1fr auto;gap:9px 16px;align-items:start}.package-row p{grid-column:1/-1;grid-row:2}.package-price{grid-column:2;grid-row:1}
+      .guide-layout{gap:28px}.guide-form{padding:20px}.contact-layout{grid-template-columns:1fr;gap:28px}.contact-form{grid-template-columns:1fr}.contact-form .field-message,.contact-form button{grid-column:auto}
+      .footer-main{grid-template-columns:1fr;gap:24px}.footer-about{grid-column:auto}.footer-bottom{flex-direction:column;gap:8px}.button{min-height:48px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Eliza Beauty Salon, főoldal"><img src="eliza-alapanyag/logo-palettahoz-igazitva/logo.svg" alt="Eliza Beauty Salon"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Menü megnyitása">☰</button>
+      <nav aria-label="Fő navigáció">
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#top" aria-current="page">Főoldal</a></li>
+          <li><a href="#kezelesek">Kezelések</a></li>
+          <li><a href="#rolunk">Rólunk</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+          <li class="nav-mobile-cta"><a class="button" href="#idopont">Időpontot kérek</a></li>
+        </ul>
+      </nav>
+      <a class="button nav-cta" href="#idopont">Időpontot kérek</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image-wrap"><img class="hero-image" src="images/Pexels Photo by Gustavo Fring.jpg" alt="Kozmetikai arckezelés nyugodt, világos környezetben"></div>
+      <div class="hero-caption contour">
+        <span class="hero-tag">Eliza Beauty Salon · Budapest</span>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">A szépség mindenkié</p>
+            <h1 id="hero-title">Személyre szabott kozmetikai kezelések</h1>
+            <p class="lead">Természetes hatóanyagok és korszerű technológiák, a bőröd aktuális igényeire hangolva.</p>
+            <p class="hero-note">Nyugodt, privát kezelések, kizárólag előre egyeztetett időpontban.</p>
+          </div>
+          <div class="hero-actions"><a class="button" href="#idopont">Időpontot kérek</a><a class="button button-secondary" href="#kezelesek">Megnézem a kezeléseket</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="section services contour" id="kezelesek" aria-labelledby="services-title">
+      <div class="container services-grid">
+        <div class="services-intro reveal-from-left"><p class="eyebrow">Kezelések a bőröd igényeire</p><h2 id="services-title">Miben segíthetek?</h2><p>Minden bőr egyedi. A kezelés előtt felmérem az állapotát, és ehhez igazítom a javasolt megoldást.</p><a class="feature-link" href="#idopont">Beszéljük meg, mire van szükséged <span aria-hidden="true">↗</span></a></div>
+        <div class="service-list reveal">
+          <a class="service-row" href="#csomagok"><span class="service-marker" aria-hidden="true"></span><h3>Belico arckezelések</h3><p>Skin regeneration érzékeny bőrre, vagy Hydro energy mélyhidratáló kezelés.</p><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-row" href="#csomagok"><span class="service-marker" aria-hidden="true"></span><h3>Mesotica kezelések</h3><p>Arckezelés, illetve arc-, nyak- és dekoltázskezelés személyre szabottan.</p><span class="service-arrow" aria-hidden="true">↗</span></a>
+          <a class="service-row" href="#csomagok"><span class="service-marker" aria-hidden="true"></span><h3>További kezelések</h3><p>Mezoterápia, fotorejuvenáció és anti-akné kezelések.</p><span class="service-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="featured-title">
+      <div class="container featured">
+        <div class="feature-copy reveal-from-left"><p class="eyebrow">A bőröd állapotához igazítva</p><h2 id="featured-title">Először megismerjük, mire van szüksége.</h2><p>A kezelés előtt alaposan felmérem a bőröd állapotát, megismerem az arcápolási szokásaidat, majd ezek alapján javaslok kezelési tervet.</p><a class="feature-link" href="#folyamat">Így zajlik egy alkalom <span aria-hidden="true">↗</span></a></div>
+        <figure class="featured-photo reveal"><img src="images/Pexels Photo by Kerim Eveyik.jpg" alt="Kozmetikai eszközzel végzett arckezelés"><figcaption class="photo-note">Kezelési hangulatkép</figcaption></figure>
+      </div>
+    </section>
+    <section class="section benefits" aria-labelledby="benefits-title">
+      <div class="container benefit-layout">
+        <div class="reveal-from-left"><p class="eyebrow">Személyes figyelem, szakmai alapok</p><h2 id="benefits-title">Bízd magad szakértő kezekre.</h2></div>
+        <div class="benefit-list reveal">
+          <article class="benefit"><h3>Bőrtípushoz igazodó terv</h3><p>A kezeléseknél figyelembe veszem a bőr aktuális állapotát és igényeit.</p></article>
+          <article class="benefit"><h3>Modern technológiák</h3><p>Korszerű kozmetikai eljárásokkal és gondosan választott hatóanyagokkal dolgozom.</p></article>
+          <article class="benefit"><h3>Nyugodt, privát alkalom</h3><p>Nálam a kezelés rólad és a bőröd gondos ápolásáról szól.</p></article>
+          <article class="benefit"><h3>Tanácsok otthonra</h3><p>A kezelés után segítek átgondolni a mindennapi bőrápolási rutinodat is.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section voices contour" aria-labelledby="voices-title">
+      <div class="container">
+        <div class="section-heading reveal"><div><p class="eyebrow">A visszatérő vendégek szavai</p><h2 id="voices-title">Valódi eredmények, elégedett vendégek</h2></div><p>Két vendég mesél arról, hogyan érezte magát az Eliza Beauty Salonban.</p></div>
+        <div class="voices-grid">
+          <figure class="voice reveal-from-left"><blockquote>„A bőröm minden kezelés után szinte ragyog, remekül érzem magam, és Eliza segítségével sikerült kialakítanom a bőrtípusomnak megfelelő arcápolási rutint.”</blockquote><cite>Fruzsi</cite></figure>
+          <figure class="voice reveal"><blockquote>„A kozmetika csodaszép, tiszta, hangulatos, mindig örömmel járok ide vissza. Az eredmény magáért beszél.”</blockquote><cite>Magdi</cite></figure>
+        </div>
+      </div>
+    </section>
+    <section class="section about" id="rolunk" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-signature contour reveal" aria-label="Eliza Beauty Salon arculati motívuma"><span class="signature-core">E</span></div>
+        <div class="about-copy reveal-from-left"><p class="eyebrow">Ismerd meg a szakértődet</p><h2 id="about-title">Sipos Eliza vagyok, az Eliza Beauty Salon megálmodója.</h2><p>14 éve segítek vendégeimnek abban, hogy bőrük egészségesebb, fiatalosabb és ragyogóbb legyen. Mesterkozmetikusként és szakmai trénerként fontos számomra a folyamatos tanulás, a személyre szabott figyelem és a gondosan megválasztott kezelési terv.</p><div class="credentials"><span>Mesterkozmetikus</span><span>Szakmai tréner</span><span>14 év tapasztalat</span></div><a class="feature-link" href="#folyamat">Tovább olvasok <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+    <section class="section facts" aria-labelledby="facts-title">
+      <div class="container"><div class="facts-head"><div><p class="eyebrow">Szakmai tapasztalat</p><h2 id="facts-title">A munkám alapjai.</h2></div><p>Az átadott számadatokat publikálás előtt egyeztetni kell.</p></div>
+        <div class="facts-row reveal"><div class="fact"><strong>14+</strong><span>év szakmai tapasztalat</span></div><div class="fact"><strong>1300+</strong><span>vendég</span></div><div class="fact"><strong>350+</strong><span>féle kozmetikum</span></div></div>
+      </div>
+    </section>
+    <section class="section journey" id="folyamat" aria-labelledby="journey-title">
+      <div class="container"><div class="section-heading reveal"><div><p class="eyebrow">Nyugodtan, lépésről lépésre</p><h2 id="journey-title">Hogyan működik?</h2></div><p>Az első kapcsolatfelvételtől az otthoni rutinod kialakításáig végig figyelek az igényeidre.</p></div>
+        <div class="journey-grid">
+          <article class="journey-step reveal"><span class="journey-index">01</span><h3>Időpont-egyeztetés</h3><p>Telefonon vagy az űrlapon keresztül tudsz bejelentkezni.</p></article>
+          <article class="journey-step reveal"><span class="journey-index">02</span><h3>Diagnosztika</h3><p>Felmérjük a bőröd állapotát és átbeszéljük az arcápolási szokásaidat.</p></article>
+          <article class="journey-step reveal"><span class="journey-index">03</span><h3>Kozmetikai kezelés</h3><p>A személyre szabott terv alapján végzem el a kezelést.</p></article>
+          <article class="journey-step reveal"><span class="journey-index">04</span><h3>Tanácsok otthonra</h3><p>Praktikus útmutatót kapsz a bőrápolási rutinodhoz.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section investment contour">
+      <div class="container investment-row reveal"><div><p class="eyebrow">Komplex megoldások</p><h2>Fektess bőröd szépségébe, a saját igényeid szerint.</h2><p class="investment-copy">A kezelési csomagok segítenek egy átgondolt, több alkalmas program összeállításában. Nézd meg a részleteket, és kérj személyre szabott tájékoztatást.</p></div><a class="button button-light" href="#csomagok">Megnézem a csomagokat</a></div>
+    </section>
+    <section class="section packages" id="csomagok" aria-labelledby="packages-title">
+      <div class="container"><div class="section-heading reveal"><div><p class="eyebrow">Komplex megoldások a tartós szépségért</p><h2 id="packages-title">Kezelési csomagok</h2></div><p>A csomagokat a bőröd igényei alapján válaszd ki. Ha bizonytalan vagy, az első alkalommal átbeszéljük a lehetőségeket.</p></div>
+        <div class="package-table">
+          <article class="package-row reveal"><h3>Anti-Age csomag</h3><p>5 × Belico kezelés, arcmasszázs minden alkalommal és személyre szabott hatóanyagok.</p><strong class="package-price">79 000 Ft</strong></article>
+          <article class="package-row reveal"><h3>Anti-Age Plus csomag</h3><p>5 × Mesotica arckezelés, mezoterápiás kezelés, arcmasszázs és személyre szabott tanácsadás.</p><strong class="package-price">99 000 Ft</strong></article>
+          <article class="package-row reveal"><h3>Tini Anti-Akné csomag</h3><p>5 alkalmas bőrtisztító program 14–19 éveseknek, otthoni bőrápolási útmutatóval.</p><strong class="package-price">59 000 Ft</strong></article>
+        </div>
+        <p class="package-note">A feltüntetett árakat és csomagtartalmat publikálás előtt egyeztetni kell.</p>
+      </div>
+    </section>
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="container"><div class="section-heading"><div><p class="eyebrow">Jó, ha tudod</p><h2 id="faq-title">Gyakori kérdések</h2></div><p>Ha nem találod a választ, írj vagy kérj időpontot, és megbeszéljük.</p></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary>Időpont nélkül is érkezhetek?</summary><p>Nem, a kozmetikámban kizárólag előre egyeztetett időpontban fogadok vendégeket.</p></details>
+          <details class="faq-item"><summary>Honnan tudjam, melyik kezelés való nekem?</summary><p>Az első alkalom előtt felmérem a bőröd állapotát, és javaslatot teszek a számodra megfelelő kezelési tervre.</p></details>
+          <details class="faq-item"><summary>Kapok segítséget az otthoni rutinomhoz?</summary><p>Igen. A kezelés után gyakorlati tanácsokat és személyre szabott termékjavaslatokat kapsz.</p></details>
+          <details class="faq-item"><summary>Hogyan tudok fizetni?</summary><p>A szalonban bankkártyával és készpénzzel is fizethetsz.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="section guide contour" aria-labelledby="guide-title">
+      <div class="container guide-layout"><div class="guide-copy reveal-from-left"><p class="eyebrow">Ajándék bőrápolási útmutató</p><h2 id="guide-title">Kérd az Arcápolási Kisokost!</h2><p>Hasznos tippek és szakértői tanácsok, hogy könnyebben alakíts ki egy hosszú távon is fenntartható bőrápolási rutint.</p></div>
+        <form class="guide-form" data-demo-form>
+          <div class="field"><label for="guide-name">Teljes név</label><input id="guide-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="guide-email">E-mail cím</label><input id="guide-email" name="email" type="email" autocomplete="email" required></div>
+          <label class="consent"><input type="checkbox" required><span>Elolvastam és elfogadom az adatkezelési tájékoztatót.</span></label>
+          <button class="button" type="submit">Kérem az ingyenes kisokost</button><p class="form-message" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+    <section class="closing" id="idopont"><div class="container closing-row"><h2>Foglalj időpontot, és induljon a változás!</h2><a class="button button-light" href="#kapcsolat">Időpontot kérek</a></div></section>
+    <section class="section contact" id="kapcsolat" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="reveal-from-left"><p class="eyebrow">Keress bizalommal</p><h2 id="contact-title">Kérdésed van? Beszéljünk.</h2><p style="margin-top:17px">Segítek megtalálni a számodra megfelelő kezelést. Írj üzenetet, vagy keress telefonon.</p>
+          <div class="contact-meta"><p><strong>Cím</strong>1092 Budapest, Ráday utca 1.</p><p><strong>Telefon</strong><a href="tel:+36203449272">+36 20 344 9272</a></p><p><strong>E-mail</strong><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a></p><p><strong>Nyitvatartás</strong>Hétfőtől péntekig, 9:00–16:00<br>Szombat és vasárnap zárva</p></div>
+          <p class="sample-data">A telefon- és e-mail-cím mintaadat, publikálás előtt cserélendő.</p>
+        </div>
+        <form class="contact-form" data-demo-form>
+          <div class="field"><label for="contact-name">Teljes név</label><input id="contact-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="contact-email">E-mail cím</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-message"><label for="contact-message">Üzenet</label><textarea id="contact-message" name="message" rows="5" required></textarea></div>
+          <button class="button" type="submit">Küldés</button><p class="form-message field-message" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer contour">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-about"><a href="#top" aria-label="Vissza a főoldal tetejére"><img class="footer-logo" src="eliza-alapanyag/logo-palettahoz-igazitva/logo-feher.svg" alt="Eliza Beauty Salon"></a><p>Személyre szabott kozmetikai kezelések bőrfiatalításra és problémás bőrre, modern technológiákkal és természetes hatóanyagokkal.</p></div>
+        <div><h3>Elérhetőség</h3><p>1092 Budapest, Ráday utca 1.<br><a href="tel:+36203449272">+36 20 344 9272</a><br><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a></p><p>Hétfőtől péntekig, 9:00–16:00<br>Hétvégén zárva</p></div>
+        <nav class="footer-links" aria-label="Lábléc navigáció"><h3>Oldalak</h3><a href="#top">Főoldal</a><a href="#kezelesek">Kezelések</a><a href="#rolunk">Rólunk</a><a href="#kapcsolat">Kapcsolat</a></nav>
+      </div>
+      <div class="footer-bottom"><span>© Eliza Beauty Salon, minden jog fenntartva.</span><a href="adatkezelesi-tajekoztato.html">Adatkezelési tájékoztató</a></div>
+      <p class="sample-data">A kapcsolati adatok mintaadatok, publikálás előtt egyeztetendők.</p>
+    </div>
+  </footer>
+  <script>
+    const header=document.querySelector('.site-header');
+    const menuToggle=document.querySelector('.menu-toggle');
+    const navLinks=document.querySelector('.nav-links');
+    window.addEventListener('scroll',()=>header.classList.toggle('is-scrolled',window.scrollY>18),{passive:true});
+    menuToggle.addEventListener('click',()=>{
+      const isOpen=menuToggle.getAttribute('aria-expanded')==='true';
+      menuToggle.setAttribute('aria-expanded',String(!isOpen));
+      menuToggle.setAttribute('aria-label',isOpen?'Menü megnyitása':'Menü bezárása');
+      navLinks.classList.toggle('is-open',!isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      navLinks.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded','false');
+      menuToggle.setAttribute('aria-label','Menü megnyitása');
+    }));
+    const revealItems=document.querySelectorAll('.reveal,.reveal-from-left');
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target)}
+    }),{threshold:.12});
+    revealItems.forEach(item=>observer.observe(item));
+    document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{
+      event.preventDefault();
+      if(!form.reportValidity())return;
+      const message=form.querySelector('.form-message');
+      message.hidden=false;
+      message.textContent='Köszönöm! Az űrlap beküldését az oldal élesítése előtt kell összekötni.';
+    }));
+  </script>
+</body>
+</html>

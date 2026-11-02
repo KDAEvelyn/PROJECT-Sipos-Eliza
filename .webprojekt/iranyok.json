@@ -1,0 +1,101 @@
+{
+  "directions": [
+    {
+      "id": 1,
+      "slug": "szakertoi-muterem",
+      "name": "Szakértői műterem",
+      "description": "Balra rendezett, osztott hero nagy portréfotóval, amely szabálytalan, organikus formában jelenik meg. A fehér és halvány rózsaszín szakaszokat finom növényi vonalrajzok kötik össze; a vendégvélemények korán megjelennek.",
+      "rationale": "Eliza szakértelmét és személyes figyelmét teszi a kezdőlap fő élményévé. A két jóváhagyott CTA már a nyitóképernyőn látható.",
+      "palette": {
+        "primary": "#D59999",
+        "secondary": "#3C0B1D",
+        "accent": "#828282",
+        "bg": "#FCF9F8",
+        "surface": "#F7EBEB",
+        "text": "#62636A",
+        "muted": "#828282"
+      },
+      "fonts": {
+        "heading": { "family": "Quicksand", "fallback": "Montserrat, sans-serif" },
+        "body": { "family": "Montserrat", "fallback": "Arial, sans-serif" },
+        "google_fonts_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap"
+      },
+      "contrast_axes": {
+        "density": "spacious",
+        "typography": "large-calm-heading-with-clear-body-hierarchy",
+        "hero": "split-screen-organic-portrait-mask",
+        "visual_metaphor": "expert-studio",
+        "section_rhythm": "alternating-editorial-blocks",
+        "shape_language": "irregular-organic-photo-masks-and-botanical-linework",
+        "shadow": "minimal",
+        "proof": "guest-testimonials",
+        "white_space": "abundant"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "csendes-borter",
+      "name": "Csendes bőrtér",
+      "description": "A nyitást egy széles, nyugodt kezelési fotó vezeti be, a cím és a CTA-k külön világos sávban kapnak helyet. A szolgáltatások áttekinthető, tömör sorokban és csomagokban jelennek meg.",
+      "rationale": "A látogató gyorsan megtalálja a bőrének megfelelő kezelési csoportot. A képi hangulat nyugalmat ad, a szöveg pedig jól olvasható marad a fotótól elkülönítve.",
+      "palette": {
+        "primary": "#D59999",
+        "secondary": "#3C0B1D",
+        "accent": "#828282",
+        "bg": "#FCF9F8",
+        "surface": "#F7EBEB",
+        "text": "#62636A",
+        "muted": "#828282"
+      },
+      "fonts": {
+        "heading": { "family": "Quicksand", "fallback": "Montserrat, sans-serif" },
+        "body": { "family": "Montserrat", "fallback": "Arial, sans-serif" },
+        "google_fonts_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap"
+      },
+      "contrast_axes": {
+        "density": "balanced",
+        "typography": "restrained-hierarchy",
+        "hero": "wide-image-followed-by-copy",
+        "visual_metaphor": "quiet-treatment-space",
+        "section_rhythm": "grouped-service-index",
+        "shape_language": "clean-edges-with-selective-rounding",
+        "shadow": "flat",
+        "proof": "service-groups-and-treatment-packages",
+        "white_space": "balanced"
+      }
+    },
+    {
+      "id": 3,
+      "slug": "a-bor-utja",
+      "name": "A bőr útja",
+      "description": "A címsor és rövid bevezető nyitja az oldalt, alatta háromképes sáv vezet át a négylépéses kezelési folyamatba. A szekciók sorrendje a kapcsolatfelvételtől az otthoni tanácsokig meséli el a közös munkát.",
+      "rationale": "A személyre szabott gondoskodást konkrét, könnyen követhető folyamattá teszi. A valódi szolgáltatási lépések adják a vizuális ritmust, nem dekoratív kártyák vagy kitalált statisztikák.",
+      "palette": {
+        "primary": "#D59999",
+        "secondary": "#3C0B1D",
+        "accent": "#828282",
+        "bg": "#FCF9F8",
+        "surface": "#F7EBEB",
+        "text": "#62636A",
+        "muted": "#828282"
+      },
+      "fonts": {
+        "heading": { "family": "Quicksand", "fallback": "Montserrat, sans-serif" },
+        "body": { "family": "Montserrat", "fallback": "Arial, sans-serif" },
+        "google_fonts_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap"
+      },
+      "contrast_axes": {
+        "density": "airy",
+        "typography": "typography-led-centered-opening",
+        "hero": "centered-type-with-photo-ribbon",
+        "visual_metaphor": "skin-care-journey",
+        "section_rhythm": "sequential-process-flow",
+        "shape_language": "mixed-rectangular-images-and-pill-cta",
+        "shadow": "none",
+        "proof": "service-process-and-guest-quotes",
+        "white_space": "generous"
+      }
+    }
+  ],
+  "total": 3
+}
