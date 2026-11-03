@@ -79,7 +79,16 @@
     </section>
     <section class="section booking" id="idopontkeres" aria-labelledby="booking-title">
       <div class="wrap contact-layout"><div><h2 id="booking-title">Foglalj időpontot, és induljon a változás!</h2><p class="lead">Kérdésed van a kezelésekről, vagy időpontot szeretnél egyeztetni? Keress bizalommal, és segítek megtalálni a számodra legjobb megoldást!</p></div>
-        <form class="booking-form" data-demo-form><div class="field"><label for="treat-name">Teljes név</label><input id="treat-name" name="name" autocomplete="name" required></div><div class="field"><label for="treat-email">E-mail cím</label><input id="treat-email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="treat-message">Üzenet</label><textarea id="treat-message" name="message" required></textarea></div><button class="button button--light" type="submit">Küldés</button><p class="form-note">A prototípus űrlapja nem küld adatot.</p><p class="form-status" aria-live="polite"></p></form>
+        <form class="booking-form" name="idopontkeres-kezelesek" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <p class="form-honeypot" aria-hidden="true"><label>Ne töltsd ki ezt a mezőt: <input name="bot-field" type="text" tabindex="-1" autocomplete="off"></label></p>
+  <div class="field"><label for="treat-name">Teljes név</label><input id="treat-name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="treat-email">E-mail cím</label><input id="treat-email" name="email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="treat-phone">Telefonszám</label><input id="treat-phone" name="phone" type="tel" autocomplete="tel"></div>
+  <div class="field"><label for="treat-date">Kért időpont</label><input id="treat-date" name="preferred_datetime" type="datetime-local"></div>
+  <div class="field"><label for="treat-message">Üzenet</label><textarea id="treat-message" name="message" rows="4" required></textarea></div>
+  <button class="button button--light" type="submit">Időpontot kérek</button>
+  <p class="form-note">A megadott időpontkérés még nem jelent automatikus foglalást; a kérést külön visszaigazoljuk.</p>
+</form>
       </div>
     </section>
   </main>

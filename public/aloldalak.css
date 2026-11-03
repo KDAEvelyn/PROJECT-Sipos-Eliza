@@ -322,3 +322,5 @@
     .package-card--featured .package-card-action .button{background:var(--color-brand-primary);color:#fff}
     @media(max-width:900px){.package-grid{grid-template-columns:1fr;max-width:620px;margin-inline:auto;gap:22px}.package-card{min-height:0}.package-card--featured{transform:none}}
     @media(max-width:600px){.package-card{padding:28px 24px}.package-card h3{min-height:0}.package-card>p:not(.price){min-height:0}}
+
+.form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}

@@ -132,6 +132,8 @@
     }
     @media(max-width:420px){.wrap{width:calc(100% - 32px)}h1{font-size:40px}.hero-copy h1{font-size:40px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-art{min-height:320px}.hero-arch{height:320px}.stats{gap:20px}.stat{min-width:92px}.gallery{grid-template-columns:1fr}.gallery figure:nth-child(3){grid-column:auto;width:auto}.gallery-image{height:290px}.steps{grid-template-columns:1fr}.step-photo{height:220px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    
+    .form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
   </style>
   <link rel="stylesheet" href="typografia.css">
   <link rel="canonical" href="https://siposelizaa.netlify.app/">
@@ -250,12 +252,16 @@
           <p>Kérdésed van a kezelésekről, vagy időpontot szeretnél egyeztetni? Keress bizalommal, és segítek megtalálni a számodra legjobb megoldást!</p>
           <div class="booking-details"><span>1092 Budapest, Ráday u. 1.</span><a href="tel:+36203449272">+36 20 344 9272</a><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a><span>H–P: 9:00–16:00 · Szo–V: zárva</span></div>
         </div>
-        <form class="booking-form reveal reveal--rise" data-demo-form>
-          <div class="field"><label for="contact-name">Teljes név</label><input id="contact-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="contact-email">E-mail cím</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="contact-message">Üzenet</label><textarea id="contact-message" name="message" rows="4" required></textarea></div>
-          <button class="button button--light" type="submit">Küldés</button><p class="form-note">Az elérhetőségi adatok a prototípusban mintaadatok.</p><p class="form-status" aria-live="polite"></p>
-        </form>
+        <form class="booking-form reveal reveal--rise" name="idopontkeres-fooldal" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <p class="form-honeypot" aria-hidden="true"><label>Ne töltsd ki ezt a mezőt: <input name="bot-field" type="text" tabindex="-1" autocomplete="off"></label></p>
+  <div class="field"><label for="home-name">Teljes név</label><input id="home-name" name="name" autocomplete="name" required></div>
+  <div class="field"><label for="home-email">E-mail cím</label><input id="home-email" name="email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="home-phone">Telefonszám</label><input id="home-phone" name="phone" type="tel" autocomplete="tel"></div>
+  <div class="field"><label for="home-date">Kért időpont</label><input id="home-date" name="preferred_datetime" type="datetime-local"></div>
+  <div class="field"><label for="home-message">Üzenet</label><textarea id="home-message" name="message" rows="4" required></textarea></div>
+  <button class="button button--light" type="submit">Időpontot kérek</button>
+  <p class="form-note">A megadott időpontkérés még nem jelent automatikus foglalást; a kérést külön visszaigazoljuk.</p>
+</form>
       </div>
     </section>
   </main>
@@ -263,7 +269,7 @@
     <div class="wrap">
       <div class="footer-main">
         <div><img class="footer-logo" src="eliza-alapanyag/logo-palettahoz-igazitva/logo-feher.svg" alt="Eliza Beauty Salon" loading="lazy"><p class="footer-description">Személyre szabott kozmetikai kezelések bőrfiatalításra és problémás bőr kezelésére, modern technológiákkal és természetes hatóanyagokkal.</p></div>
-        <div><h3>Elérhetőség</h3><div class="footer-links"><a href="tel:+36203449272">+36 20 344 9272</a><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a><span>1092 Budapest, Ráday u. 1.</span><span>H–P: 9:00–16:00 · Szo–V: zárva</span></div><small class="demo-data">A kapcsolatadatok mintaadatok.</small></div>
+        <div><h3>Elérhetőség</h3><div class="footer-links"><a href="tel:+36203449272">+36 20 344 9272</a><a href="mailto:hello.elizabeauty@gmail.com">hello.elizabeauty@gmail.com</a><span>1092 Budapest, Ráday u. 1.</span><span>H–P: 9:00–16:00 · Szo–V: zárva</span></div><small class="demo-data">Az elérhetőségek mintaadatok.</small></div>
         <div><h3>Oldalak</h3><div class="footer-links"><a href="#top">Főoldal</a><a href="kezelesek.html">Kezelések</a><a href="rolunk.html">Rólunk</a><a href="kapcsolat.html">Kapcsolat</a><a href="adatkezeles.html">Adatkezelési tájékoztató</a></div></div>
       </div>
       <div class="footer-bottom"><span>© Eliza Beauty Salon – Minden jog fenntartva!</span><a href="adatkezeles.html">Adatkezelési tájékoztató</a></div>
@@ -318,6 +324,7 @@
     @media(max-width:1000px){.booking-grid{gap:48px}.faq-grid{gap:45px}.newsletter{padding:36px}}
     @media(max-width:760px){.callout-inner{grid-template-columns:1fr;gap:25px;padding:48px 0}.callout-inner .button{justify-self:start}.faq-grid{grid-template-columns:1fr;gap:28px}.newsletter{padding:28px 22px}.newsletter::before{right:19px;top:18px;width:40px;height:24px}.newsletter-form{grid-template-columns:1fr}.newsletter-form .button{justify-self:start}.booking-grid{grid-template-columns:1fr;gap:38px}.booking-form{padding:24px 19px}.footer-main{grid-template-columns:1fr 1fr;gap:30px}.footer-main>div:first-child{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px}.site-footer::before{right:-90px}}
     @media(max-width:420px){.footer-main{grid-template-columns:1fr}.footer-main>div:first-child{grid-column:auto}}
+    
   </style>
   <style id="design-reference-overrides">
     :root{--botanical-pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 210'%3E%3Cg fill='none' stroke='%23D59999' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 200C48 165 48 112 136 12'/%3E%3Cpath d='M42 164C22 159 13 145 11 127c18-1 31 12 31 37Z'/%3E%3Cpath d='M51 145c-2-20 7-34 24-42 5 17-3 32-24 42Z'/%3E%3Cpath d='M69 112c-18-6-26-19-24-37 17 4 27 17 24 37Z'/%3E%3Cpath d='M81 91c0-19 10-31 28-36 2 18-7 31-28 36Z'/%3E%3Cpath d='M100 59c-16-8-22-22-17-39 16 6 23 20 17 39Z'/%3E%3Cpath d='M34 174c-1-13-8-20-21-22m43-25c7-12 7-22 2-32m29-14c10-9 13-18 11-30'/%3E%3Cpath d='M15 132Q28 139 38 157M72 108Q63 120 55 139M47 79Q59 91 66 106M105 58Q92 68 84 85M86 23Q96 35 98 53'/%3E%3Cpath d='M124 22c-8-3-9-8-7-13 7 1 10 5 7 13Zm1 0c1-8 6-11 12-10-1 7-5 10-12 10Z'/%3E%3C/g%3E%3C/svg%3E")}
@@ -383,6 +390,7 @@
     body .button:not(.hero-actions .button--outline){color:#fff}
     body .hero-actions .button--outline,body .hero-actions .button--outline:hover{color:var(--color-brand-secondary)}
     a.button[href="#kapcsolat"]{color:#fff!important}
+    
   </style>
   <script>
     const header=document.getElementById('site-header');
