@@ -101,27 +101,27 @@
     .text-link{display:inline-flex;align-items:center;gap:12px;margin-top:28px;color:var(--color-brand-secondary);font-size:13px;font-weight:600;text-decoration:none}
     .text-link::after{content:"";width:28px;height:1px;background:var(--color-brand-primary);transition:width .25s}
     .text-link:hover::after{width:44px}
-    .gallery{display:grid;grid-template-columns:1.08fr .92fr 1fr;gap:18px;align-items:start}
-    .gallery figure{position:relative;isolation:isolate;margin:0}.gallery figure:nth-child(2){margin-top:54px}
-    .gallery figure::before{content:"";position:absolute;z-index:0;top:-8px;left:8px;right:-8px;bottom:38px;background:#F3E1E1;border-radius:47% 53% 40% 60% / 35% 43% 57% 65%;transform:rotate(3deg)}
-    .gallery-image{position:relative;z-index:1;overflow:hidden;background:var(--color-brand-surface);border-radius:180px 180px 12px 12px}
-    .gallery figure:nth-child(2) .gallery-image{border-radius:12px 12px 180px 180px}
-    .gallery figure:nth-child(1) .gallery-image{height:310px}
-    .gallery figure:nth-child(2) .gallery-image{height:365px}
-    .gallery figure:nth-child(3) .gallery-image{height:310px;margin-top:24px}
-    .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.25,1)}
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+    .gallery figure{position:relative;isolation:isolate;margin:26px 0 0}.gallery figure:nth-child(2){margin-top:0}
+    .gallery figure::before{content:"";position:absolute;z-index:0;inset:8px -8px 42px 8px;background:#F3E1E1;border-radius:47% 53% 44% 56% / 35% 43% 57% 65%;transform:rotate(2deg)}
+    .gallery-image{position:relative;z-index:1;height:330px;overflow:hidden;background:var(--color-brand-surface);border-radius:180px 180px 12px 12px}
+    .gallery img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.25,1)}
     .gallery figure:hover img{transform:scale(1.035)}
-    .gallery figcaption{position:relative;z-index:1;display:flex;align-items:center;gap:12px;margin-top:14px;color:var(--color-brand-secondary);font-size:12px}
-    .gallery figcaption::before{content:"";width:18px;height:10px;border:1px solid var(--color-brand-primary);border-radius:50%;transform:rotate(-24deg);flex:0 0 auto}
+    .gallery figcaption{position:relative;z-index:1;display:flex;align-items:center;gap:10px;min-height:22px;margin:20px 12px 0;color:var(--color-brand-secondary);font-size:12px;line-height:1.5}
+    .gallery-marker{display:block;width:19px;height:19px;flex:0 0 auto;color:var(--color-brand-primary)}
+    .gallery-marker svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
     .process{overflow:hidden;background:var(--color-brand-secondary);color:rgba(255,255,255,.8)}
     .process::before,.process::after{content:"";position:absolute;right:-130px;top:-140px;border:1px solid rgba(213,153,153,.3);border-radius:50%}
     .process::before{width:430px;height:430px}.process::after{right:-76px;top:-90px;width:320px;height:320px}
     .process h2,.process h3{color:#fff}.process .eyebrow{color:#e2b7b7}
     .process .section-heading{position:relative;z-index:1}.process .section-heading p{color:rgba(255,255,255,.68)}
     .steps{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
-    .step{position:relative;padding-top:27px;border-top:1px solid rgba(255,255,255,.32)}
-    .step::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border:1px solid #e2b7b7;border-radius:50%;background:var(--color-brand-secondary)}
-    .step-no{display:block;margin-bottom:22px;color:#e2b7b7;font:600 30px var(--font-heading)}
+    .step{position:relative}
+    .step-photo{--step-shape:30px;position:relative;isolation:isolate;height:176px;margin:0 5px 22px}
+    .step-photo::before{content:"";position:absolute;z-index:0;inset:7px -5px -5px 7px;border-radius:var(--step-shape);background:rgba(213,153,153,.28)}
+    .step-photo img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover;border-radius:var(--step-shape)}
+    .step:nth-child(2) .step-photo img{object-position:center 42%}
+    .step-no{display:block;margin-bottom:12px;color:#e2b7b7;font:600 28px var(--font-heading)}
     .step h3{font-size:20px}.step p{margin-top:10px;color:rgba(255,255,255,.69);font-size:13px;line-height:1.7}
     .reveal{opacity:0;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
     .reveal--rise{transform:translateY(22px)}.reveal--left{transform:translateX(-22px)}.reveal--scale{transform:scale(.985)}
@@ -139,10 +139,10 @@
       .hero{padding:30px 0 58px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy{padding:14px 0 0}.hero-copy h1{font-size:clamp(42px,8vw,54px)}.hero-art{min-height:350px;max-width:480px;margin-inline:auto;width:100%}.hero-arch{height:350px;width:min(100%,360px)}.portrait-caption{right:0;bottom:22px}
       .section{padding:68px 0}.section-heading{display:block;margin-bottom:32px}.section-heading p{margin-top:16px}.reviews{grid-template-columns:1fr;gap:30px}.review-intro{max-width:480px}.review{margin-left:10px}
       .benefit-grid{grid-template-columns:1fr;gap:4px;margin-top:28px}.benefit{padding:23px 0}.about-grid{grid-template-columns:1fr;gap:46px}.about-photo-wrap{max-width:430px;margin-inline:auto;width:100%}.about-photo{height:430px}.about-copy{order:-1}.about-seal{right:-8px;width:98px;height:98px;font-size:17px}
-      .gallery{grid-template-columns:1fr 1fr;gap:13px}.gallery figure:nth-child(2){margin-top:35px}.gallery figure:nth-child(1) .gallery-image,.gallery figure:nth-child(3) .gallery-image{height:260px}.gallery figure:nth-child(2) .gallery-image{height:300px}.gallery figure:nth-child(3){grid-column:1/-1;margin-top:-20px}.gallery figure:nth-child(3) .gallery-image{height:270px;margin-top:0}
+      .gallery{grid-template-columns:1fr 1fr;gap:18px}.gallery figure{margin-top:0}.gallery figure:nth-child(3){grid-column:1/-1;justify-self:center;width:calc(50% - 9px)}.gallery-image{height:260px}
       .steps{grid-template-columns:1fr 1fr;gap:30px 18px}
     }
-    @media(max-width:420px){.wrap{width:calc(100% - 32px)}h1{font-size:40px}.hero-copy h1{font-size:40px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-art{min-height:320px}.hero-arch{height:320px}.stats{gap:20px}.stat{min-width:92px}.gallery{grid-template-columns:1fr}.gallery figure:nth-child(2){margin-top:0}.gallery figure:nth-child(1) .gallery-image,.gallery figure:nth-child(2) .gallery-image,.gallery figure:nth-child(3) .gallery-image{height:300px}.gallery figure:nth-child(3){grid-column:auto;margin-top:0}.steps{grid-template-columns:1fr}}
+    @media(max-width:420px){.wrap{width:calc(100% - 32px)}h1{font-size:40px}.hero-copy h1{font-size:40px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-art{min-height:320px}.hero-arch{height:320px}.stats{gap:20px}.stat{min-width:92px}.gallery{grid-template-columns:1fr}.gallery figure:nth-child(3){grid-column:auto;width:auto}.gallery-image{height:290px}.steps{grid-template-columns:1fr}.step-photo{height:220px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
@@ -195,9 +195,9 @@
       <div class="wrap">
         <div class="section-heading reveal reveal--rise"><div><p class="eyebrow">Arcápolás, figyelemmel</p><h2 id="gallery-title">Szakértő gondoskodás, jó érzés megérkezni.</h2></div><p>A képek hangulati illusztrációk. A kezelés személyre szabott folyamat, amely a bőr állapotának felmérésével kezdődik.</p></div>
         <div class="gallery">
-          <figure class="reveal reveal--rise"><div class="gallery-image"><img src="images/Pexels Photo by Gustavo Fring.jpg" alt="Arckezelés közben, kozmetikai gondoskodás"></div><figcaption>Nyugodt arckezelés</figcaption></figure>
-          <figure class="reveal reveal--scale"><div class="gallery-image"><img src="images/Pexels Photo by Kerim Eveyik.jpg" alt="Kozmetikai eszköz használata arckezeléshez"></div><figcaption>Korszerű technológiák</figcaption></figure>
-          <figure class="reveal reveal--rise"><div class="gallery-image"><img src="images/Pexels Photo by olia danilevich.jpg" alt="Arcmasszázs egy kozmetikai kezelés során"></div><figcaption>Személyes figyelem</figcaption></figure>
+          <figure class="reveal reveal--rise"><div class="gallery-image"><img src="images/Pexels Photo by Gustavo Fring.jpg" alt="Arckezelés közben, kozmetikai gondoskodás"></div><figcaption><span class="gallery-marker" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 16.8c4.6-.7 8.4-4.2 11.7-10.5M7.1 13c-2-2.1-1.9-4.1-.9-5.2 2.3.7 3.6 2.1 3.8 4.2m1.4-2.2c-.2-2.7 1.4-4.4 3-4.7 1.2 2 .8 4-.9 5.8M3 16.8l-.6 1.1"/></svg></span>Nyugodt arckezelés</figcaption></figure>
+          <figure class="reveal reveal--scale"><div class="gallery-image"><img src="images/Pexels Photo by Kerim Eveyik.jpg" alt="Kozmetikai eszköz használata arckezeléshez"></div><figcaption><span class="gallery-marker" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 16.8c4.6-.7 8.4-4.2 11.7-10.5M7.1 13c-2-2.1-1.9-4.1-.9-5.2 2.3.7 3.6 2.1 3.8 4.2m1.4-2.2c-.2-2.7 1.4-4.4 3-4.7 1.2 2 .8 4-.9 5.8M3 16.8l-.6 1.1"/></svg></span>Korszerű technológiák</figcaption></figure>
+          <figure class="reveal reveal--rise"><div class="gallery-image"><img src="images/Pexels Photo by olia danilevich.jpg" alt="Arcmasszázs egy kozmetikai kezelés során"></div><figcaption><span class="gallery-marker" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 16.8c4.6-.7 8.4-4.2 11.7-10.5M7.1 13c-2-2.1-1.9-4.1-.9-5.2 2.3.7 3.6 2.1 3.8 4.2m1.4-2.2c-.2-2.7 1.4-4.4 3-4.7 1.2 2 .8 4-.9 5.8M3 16.8l-.6 1.1"/></svg></span>Személyes figyelem</figcaption></figure>
         </div>
       </div>
     </section>
@@ -205,10 +205,10 @@
       <div class="wrap">
         <div class="section-heading reveal reveal--rise"><div><p class="eyebrow">Hogyan működik?</p><h2 id="process-title">Négy lépés, személyre szabva</h2></div><p>A kezelés előtt átbeszéljük a bőröd állapotát és a céljaidat, majd ezek alapján állítjuk össze a kezelési tervet.</p></div>
         <div class="steps">
-          <article class="step reveal reveal--rise"><span class="step-no">01</span><h3>Időpont-egyeztetés</h3><p>Telefonon vagy az űrlapon keresztül tudsz bejelentkezni. Kizárólag előre egyeztetett időpontban fogadlak.</p></article>
-          <article class="step reveal reveal--rise"><span class="step-no">02</span><h3>Diagnosztika és terv</h3><p>Felmérjük a bőröd állapotát és arcápolási szokásaidat, majd összeállítom a számodra megfelelő tervet.</p></article>
-          <article class="step reveal reveal--rise"><span class="step-no">03</span><h3>Kozmetikai kezelés</h3><p>A személyre szabott terv alapján végzem el a kezelést, relaxáló arcmasszázzsal kiegészítve.</p></article>
-          <article class="step reveal reveal--rise"><span class="step-no">04</span><h3>Tanácsok otthonra</h3><p>Gyakorlati tanácsokkal és személyre szabott termékajánlásokkal segítek kialakítani az otthoni rutinodat.</p></article>
+          <article class="step reveal reveal--rise"><figure class="step-photo"><img src="images/1.jpg" alt="Naptár és óra az időpont-egyeztetéshez"></figure><span class="step-no">01</span><h3>Időpont-egyeztetés</h3><p>Telefonon vagy az űrlapon keresztül tudsz bejelentkezni. Kizárólag előre egyeztetett időpontban fogadlak.</p></article>
+          <article class="step reveal reveal--rise"><figure class="step-photo"><img src="images/2.jpg" alt="Kozmetikus a vendég arcbőrét vizsgálja"></figure><span class="step-no">02</span><h3>Diagnosztika és terv</h3><p>Felmérjük a bőröd állapotát és arcápolási szokásaidat, majd összeállítom a számodra megfelelő tervet.</p></article>
+          <article class="step reveal reveal--rise"><figure class="step-photo"><img src="images/3.jpg" alt="Kozmetikus maszkot visz fel egy vendég arcára"></figure><span class="step-no">03</span><h3>Kozmetikai kezelés</h3><p>A személyre szabott terv alapján végzem el a kezelést, relaxáló arcmasszázzsal kiegészítve.</p></article>
+          <article class="step reveal reveal--rise"><figure class="step-photo"><img src="images/4.jpg" alt="Arcmaszk használata az otthoni bőrápolás részeként"></figure><span class="step-no">04</span><h3>Tanácsok otthonra</h3><p>Gyakorlati tanácsokkal és személyre szabott termékajánlásokkal segítek kialakítani az otthoni rutinodat.</p></article>
         </div>
       </div>
     </section>
@@ -333,10 +333,14 @@
     .about-photo-wrap::before{inset:12px -10px -10px 10px;border:0;border-radius:47% 53% 40% 60% / 35% 43% 57% 65%;background:#F3E1E1;transform:rotate(4deg);opacity:1}
     .gallery figure::before{background:#F3E1E1}
     .about-seal{display:none}
-    .gallery figure:nth-child(1) .gallery-image{border-radius:58% 42% 50% 50% / 42% 48% 52% 58%}
-    .gallery figure:nth-child(2) .gallery-image{border-radius:43% 57% 39% 61% / 55% 38% 62% 45%}
-    .gallery figure:nth-child(3) .gallery-image{border-radius:61% 39% 52% 48% / 45% 58% 42% 55%}
-    .gallery figcaption::before{width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-35deg)}
+    .gallery-image{border-radius:46% 54% 46% 54% / 34% 38% 62% 66%}
+    .gallery figure:nth-child(1)::before{border-radius:43% 57% 39% 61% / 32% 42% 58% 68%;transform:rotate(-2deg)}
+    .gallery figure:nth-child(2)::before{border-radius:54% 46% 56% 44% / 40% 32% 68% 60%;transform:rotate(2deg)}
+    .gallery figure:nth-child(3)::before{border-radius:58% 42% 44% 56% / 36% 48% 52% 64%;transform:rotate(-1deg)}
+    .gallery figure:nth-child(1) .gallery-image{border-radius:48% 52% 43% 57% / 32% 37% 63% 68%}
+    .gallery figure:nth-child(2) .gallery-image{border-radius:43% 57% 49% 51% / 38% 31% 69% 62%}
+    .gallery figure:nth-child(2) img{object-position:center 58%}
+    .gallery figure:nth-child(3) .gallery-image{border-radius:55% 45% 42% 58% / 30% 41% 59% 70%}
     .process{background:var(--color-brand-secondary);color:rgba(255,255,255,.82)}
     .process::before,.process::after{border:0;border-radius:0;background:var(--botanical-pattern) center/contain no-repeat;filter:brightness(0) invert(1);opacity:.22}
     .process::before{width:150px;height:210px;right:8px;top:-10px}
