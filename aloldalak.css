@@ -48,6 +48,8 @@
     .section{position:relative;padding:100px 0}
     .section--blush{background:var(--color-brand-surface)}
     .section-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:50px}
+    .packages-heading{align-items:center}
+    .values-heading{align-items:center}
     .section-heading p{max-width:420px;font-size:15px;line-height:1.7}
     .section-heading h2{max-width:650px}
     .reviews{display:grid;grid-template-columns:.8fr 1.2fr 1.2fr;gap:36px;align-items:start}
@@ -200,6 +202,9 @@
     .process h2,.process h3{color:#fff}
     .process .eyebrow,.step-no{color:#E2B7B7}
     .process .section-heading p,.step p{color:rgba(255,255,255,.72)}
+    .problem-heading{align-items:center}
+    .problem-heading>div{flex:1}
+    .problem-heading .eyebrow{margin:0 0 14px;text-align:left}
     .step{border-color:rgba(255,255,255,.32)}
     .step::before{border-color:#E2B7B7;background:var(--color-brand-secondary)}
     .callout-inner::after{width:126px;height:176px;right:-8px;bottom:-34px;border:0;border-radius:0;background:var(--botanical-pattern) center/contain no-repeat;opacity:.5}

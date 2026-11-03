@@ -30,7 +30,7 @@ h3 {
   line-height: 1.3 !important;
 }
 
-p:not(.eyebrow):not(.lead):not(.form-note):not(.form-status):not(.sample-note):not(.price) {
+p:not(.eyebrow):not(.lead):not(.form-note):not(.form-status):not(.sample-note):not(.price):not(.footer-description) {
   font-size: var(--type-body) !important;
   line-height: 1.7 !important;
 }
@@ -38,6 +38,11 @@ p:not(.eyebrow):not(.lead):not(.form-note):not(.form-status):not(.sample-note):n
 p.lead {
   font-size: var(--type-lead) !important;
   line-height: 1.7 !important;
+}
+
+p.footer-description {
+  font-size: var(--type-small) !important;
+  line-height: 1.5 !important;
 }
 
 li {
