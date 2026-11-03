@@ -122,6 +122,7 @@
   
 
     .callout-inner{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:45px;padding:72px 0}
+    .callout-section .callout-inner{padding-block:0}
     .callout-inner::after{content:"";position:absolute;right:-170px;bottom:-195px;width:300px;height:300px;border:1px solid rgba(60,11,29,.14);border-radius:50%;pointer-events:none}
     .callout-inner h2{max-width:700px}.callout-inner .lead{max-width:660px;margin-top:15px;font-size:15px}
     .faq-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:75px}
@@ -273,6 +274,12 @@
     .value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px}
     .value-card{padding:25px}
     .salon-panel{padding:42px;background:#fff;border-left:3px solid var(--color-brand-primary)}
+    .salon-section{background:#fff}
+    .salon-section .salon-panel{padding:0;background:transparent;border:0;margin-bottom:-100px}
+    .salon-section .salon-panel{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:54px}
+    .salon-visual{display:block;width:100%;height:min(480px,42vw);object-fit:contain;object-position:center}
+    @media(max-width:900px){.salon-section .salon-panel{grid-template-columns:1fr;gap:28px}.salon-visual{height:auto;max-height:420px}}
+    @media(max-width:760px){.salon-section .salon-panel{margin-bottom:-68px}}
     .contact-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
     .contact-details{display:grid;gap:18px;margin-top:30px}
     .contact-details div{padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.2)}
