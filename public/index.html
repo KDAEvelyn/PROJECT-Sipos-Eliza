@@ -259,8 +259,10 @@
   <div class="field"><label for="home-phone">Telefonszám</label><input id="home-phone" name="phone" type="tel" autocomplete="tel"></div>
   <div class="field"><label for="home-date">Kért időpont</label><input id="home-date" name="preferred_datetime" type="datetime-local"></div>
   <div class="field"><label for="home-message">Üzenet</label><textarea id="home-message" name="message" rows="4" required></textarea></div>
+  <label class="privacy-ack"><input type="checkbox" name="privacy-notice-acknowledged" value="yes" required><span>Elolvastam és tudomásul vettem az <a href="adatkezeles.html">adatkezelési tájékoztatót</a>.</span></label>
+
   <button class="button button--light" type="submit">Időpontot kérek</button>
-  <p class="form-note">A megadott időpontkérés még nem jelent automatikus foglalást; a kérést külön visszaigazoljuk.</p>
+  <p class="form-note">A tesztoldalon ne adj meg valódi személyes adatot. Az időpontkérés nem jelent automatikus foglalást; éles használat esetén külön visszaigazolás szükséges.</p>
 </form>
       </div>
     </section>
@@ -308,6 +310,7 @@
     .booking-form{padding:32px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.17)}
     .booking-form .field label{color:#fff}.booking-form .field input,.booking-form .field textarea{background:#fff;border-color:transparent;color:var(--color-brand-secondary)}
     .booking-form .field{margin-bottom:17px}.booking-form .button{margin-top:5px}
+    .privacy-ack{display:flex;align-items:flex-start;gap:10px;margin:18px 0 14px;color:rgba(255,255,255,.82);font-size:13px;line-height:1.55}.privacy-ack input{flex:0 0 18px;width:18px;height:18px;margin:2px 0 0;accent-color:var(--color-brand-primary)}.privacy-ack a{color:inherit;text-decoration:underline;text-underline-offset:3px}
     .form-note{margin-top:12px;font-size:11px;color:rgba(255,255,255,.6)}
     .form-status{min-height:22px;margin-top:12px;color:#fff;font-size:12px}.newsletter .form-status{color:var(--color-brand-secondary)}
     .site-footer{position:relative;overflow:hidden;background:#2e0817;color:rgba(255,255,255,.72);padding:42px 0 24px}

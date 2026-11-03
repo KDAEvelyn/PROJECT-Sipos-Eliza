@@ -324,3 +324,16 @@
     @media(max-width:600px){.package-card{padding:28px 24px}.package-card h3{min-height:0}.package-card>p:not(.price){min-height:0}}
 
 .form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+
+/* Adatkezelési tájékoztató és űrlap-visszajelzés */
+.privacy-ack{display:flex;align-items:flex-start;gap:10px;margin:18px 0 14px;color:rgba(255,255,255,.82);font-size:13px;line-height:1.55}
+.privacy-ack input{flex:0 0 18px;width:18px;height:18px;margin:2px 0 0;accent-color:var(--color-brand-primary)}
+.privacy-ack a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.privacy-policy{max-width:820px;padding:36px;background:#fff;border:1px solid var(--color-brand-border)}
+.privacy-policy h2{margin:30px 0 10px;font-size:clamp(20px,2.5vw,27px)}
+.privacy-policy h2:first-of-type{margin-top:28px}
+.privacy-policy p+p{margin-top:14px}
+.privacy-policy a{color:var(--color-brand-secondary);text-decoration:underline;text-underline-offset:3px}
+.privacy-updated{font-size:13px;color:var(--color-brand-muted)}
+.privacy-return{margin-top:28px}
+@media(max-width:760px){.privacy-policy{padding:24px 20px}}
