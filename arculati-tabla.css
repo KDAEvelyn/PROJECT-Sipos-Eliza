@@ -76,12 +76,11 @@ a { color: inherit; }
 .type-meta span { font-size: 12px; font-weight: 700; }
 .type-meta small { color: var(--text); font-size: 10px; line-height: 1.45; }
 .type-row > p { margin: 0; color: var(--burgundy); }
-.type-display > p { font-family: var(--font-display); font-size: clamp(38px, 4.17vw, 60px); font-weight: 600; line-height: 1.3; letter-spacing: -.04em; }
-.type-h2 > p { font-family: var(--font-display); font-size: clamp(28px, 2.78vw, 40px); font-weight: 600; line-height: 1.3; letter-spacing: -.03em; }
-.type-h3 > p { font-size: 28px; font-weight: 700; line-height: 1.3; }
-.type-h4 > p { font-size: 24px; font-weight: 600; line-height: 1.3; }
-.type-kicker > p { color: var(--rose); font-size: 17px; font-weight: 700; line-height: 1.3; }
-.type-body > p { max-width: 560px; color: var(--text); font-size: 14px; line-height: 1.65; }
+.type-display > p { font-family: var(--font-display); font-size: clamp(42px, 5.2vw, 64px); font-weight: 600; line-height: 1.08; letter-spacing: -.04em; }
+.type-h2 > p { font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -.03em; }
+.type-h3 > p,.type-h4 > p { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.3; }
+.type-kicker > p { color: var(--rose); font-size: 12px; font-weight: 700; line-height: 1.5; }
+.type-body > p { max-width: 560px; color: var(--text); font-size: 16px; line-height: 1.7; }
 .type-button button { justify-self: start; border: 0; border-radius: 999px; background: var(--rose); color: var(--white); padding: 15px 22px; font-size: 14px; font-weight: 700; line-height: 1.3; letter-spacing: .04em; text-transform: uppercase; }
 .type-button button span { margin-left: 10px; font-size: 16px; }
 .logo-grid { display: grid; grid-template-columns: 1.3fr 1.3fr .6fr; gap: 16px; }
@@ -122,7 +121,7 @@ a { color: inherit; }
   .brand-mark { width: 108px; }
   .masthead-meta { font-size: 9px; }
   .intro { padding: 66px 0 38px; }
-  .intro h1 { font-size: clamp(42px, 12vw, 58px); }
+  .intro h1 { font-size: clamp(42px, 5.2vw, 64px); }
   .intro-foot { margin-top: 48px; }
   .section { padding: 58px 0 62px; }
   .section-heading { grid-template-columns: 1fr; gap: 18px; margin-bottom: 30px; }
@@ -132,10 +131,8 @@ a { color: inherit; }
   .swatch-color { max-width: 120px; }
   .type-row { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
   .type-row > p, .type-button button { grid-column: 1; }
-  .type-display > p { font-size: 34px; }
-  .type-h2 > p { font-size: 26px; }
-  .type-h3 > p { font-size: 20px; }
-  .type-h4 > p { font-size: 18px; }
+  .type-display > p { font-size: clamp(42px, 5.2vw, 64px); }
+  .type-h2 > p { font-size: clamp(30px, 3.6vw, 44px); }
   .logo-grid { grid-template-columns: 1fr 1fr; }
   .logo-card { min-height: 160px; }
   .logo-card-icon { grid-column: span 2; min-height: 110px; }

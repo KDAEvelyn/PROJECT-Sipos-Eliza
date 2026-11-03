@@ -71,20 +71,37 @@ Kerülendő a harsány, csillogó vagy giccses rózsaszín hatás, az erős szí
 
 A rendszer két betűcsaládot használ. Mindkettő támogatja a magyar ékezetes karaktereket; beágyazott használatkor az ő/ű karakterek megjelenését is ellenőrizd.
 
-- **Quicksand:** H1 és H2 címsorok, valamint rövid, karakteres márkaüzenetek. Alapértelmezett vastagság: 600.
-- **Montserrat:** H3–H4, törzsszöveg, navigáció, címkék, űrlapok és gombok.
+- **Quicksand:** H1–H3 címsorok és rövid, karakteres márkaüzenetek. Alapértelmezett vastagság: 600.
+- **Montserrat:** törzsszöveg, navigáció, címkék, űrlapok és gombok.
 - **Fallback:** Quicksand után Montserrat, majd általános sans-serif; Montserrat után Arial, majd sans-serif.
 
 | Szerep | Betűcsalád / súly | Méret és sormagasság | Megjegyzés |
 |---|---|---|---|
-| H1 / hero | Quicksand 600 | 60 / 78 px desktop; mobilon kb. 34–58 px, tördeléshez igazítva | Fő üzenet, bordó |
-| H2 / szekciócím | Quicksand 600 | 40 / 52 px desktop; mobilon kb. 26–32 px | Szekciók fő címe |
-| H3 / kiemelt cím | Montserrat 700 | 28 / 36 px desktop; mobilon kb. 20 px | Kiemelt alcím |
-| H4 / kártyacím | Montserrat 600 | 24 / 31 px desktop; mobilon kb. 18 px | Kártyák és kisebb blokkok |
-| Alcím / eyebrow | Montserrat 700 | 20 / 26 px a táblán; webes használatban szükség szerint kisebb | Rövid, rózsás hangsúly |
-| Törzsszöveg | Montserrat 400 | 16 / 26 px | Hosszabb szöveg grafitszürkével |
-| Gombfelirat | Montserrat 700 | 14 / 18 px | Rövid, cselekvésorientált; a táblán nagybetűs |
-| Meta / apró információ | Montserrat 400–600 | 10–13 px körül | Kiegészítő, ne ez hordozzon lényegi információt |
+| H1 / oldal főcíme | Quicksand 600 | `clamp(42px, 5.2vw, 64px)` / 1.08 | Minden oldalon azonos skála |
+| H2 / szekciócím | Quicksand 600 | `clamp(30px, 3.6vw, 44px)` / 1.15 | Minden szekcióban azonos skála |
+| H3 / alcím, kártyacím | Quicksand 600 | 21px / 1.3 | Kártyákban és tartalmi blokkokban egységes |
+| Lead / kiemelt bevezető | Montserrat 400 | 18px / 1.7 | Hero és fontos szekcióbevezetők |
+| Törzsszöveg | Montserrat 400 | 16px / 1.7 | Minden normál leíró szöveg |
+| Gomb, navigáció, mezőcímke | Montserrat 600 | 14px / 1.4 | Interaktív elemek egységes mérete |
+| Kicker, meta, apró betű | Montserrat 400–700 | 12px / 1.5 | Kiegészítő információ; lényegi szöveget ne tegyél ide |
+
+### Méretskála-tokenek
+
+```css
+:root {
+  --type-h1: clamp(42px, 5.2vw, 64px);
+  --type-h2: clamp(30px, 3.6vw, 44px);
+  --type-h3: 21px;
+  --type-lead: 18px;
+  --type-body: 16px;
+  --type-control: 14px;
+  --type-small: 12px;
+}
+```
+
+Ezek a tokenek a főoldalon és minden aloldalon ugyanazt jelentik. Ne adj egyedi betűméretet komponenshez: ha új szerep kell, előbb bővítsd ezt a skálát, és vezesd át minden oldalon.
+Az élő méretskála a `typografia.css` fájlban van. A főoldalak és aloldalak ezt a közös fájlt töltsék be; ne tarts fenn külön tipográfiai értékeket az egyes oldalak CSS-ében.
+Kivétel csak a valóban adatjellegű kiemelés lehet: árak, statisztikai számok és a folyamat lépésszámai. Ezek méretét ne használd normál címsorhoz vagy leíró szöveghez.
 
 A címsorok legyenek jól tagoltak, de ne használj túl sok méretet egy nézetben. A törzsszöveg olvashatósága fontosabb a dekoratív tördelésnél. A nagybetűs megjelenés csak rövid gombfeliratnál vagy kis metaelemnél indokolt; hosszú szöveget ne szedj csupa nagybetűvel.
 
